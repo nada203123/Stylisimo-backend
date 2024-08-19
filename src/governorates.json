@@ -1,0 +1,27 @@
+[
+    { "governorate": "Tunis" },
+    { "governorate": "Ariana" },
+    { "governorate": "Ben Arous" },
+    { "governorate": "Manouba" },
+    { "governorate": "Nabeul" },
+    { "governorate": "Zaghouan" },
+    { "governorate": "Bizerte" },
+    { "governorate": "Beja" },
+    { "governorate": "Jendouba" },
+    { "governorate": "Kef" },
+    { "governorate": "Siliana" },
+    { "governorate": "Kairouan" },
+    { "governorate": "Kasserine" },
+    { "governorate": "Sidi Bouzid" },
+    { "governorate": "Sousse" },
+    { "governorate": "Monastir" },
+    { "governorate": "Mahdia" },
+    { "governorate": "Sfax" },
+    { "governorate": "Gafsa" },
+    { "governorate": "Tozeur" },
+    { "governorate": "Kebili" },
+    { "governorate": "Gabes" },
+    { "governorate": "Medenine" },
+    { "governorate": "Tataouine" }
+  ]
+  
