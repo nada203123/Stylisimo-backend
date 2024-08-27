@@ -50,7 +50,9 @@ async function syncDatabase() {
   }
 }
 
-
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
 
 app.listen(PORT, async () => {
   console.log(`Server is listening at http://localhost:${PORT}`);
