@@ -18,11 +18,11 @@ const PORT = process.env.PORT || 4000
 app.use(cors());
 app.use(express.json())
 
-app.use('/api',categoryRoutes)
-app.use('/subCategories',subCategoryRoutes)
-app.use('/product',productRoutes)
-app.use('/user',userRoutes);
-app.use('/order',orderRoutes)
+app.use('/api/api/',categoryRoutes)
+app.use('/api/subCategories',subCategoryRoutes)
+app.use('/api/product',productRoutes)
+app.use('/api/user',userRoutes);
+app.use('/api/order',orderRoutes)
 
 app.use('/files', express.static(path.join(__dirname, '../files')));
 
