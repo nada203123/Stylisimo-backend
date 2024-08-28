@@ -54,7 +54,7 @@ async function syncDatabase() {
 }
 
 app.get('/', (req, res) => {
-  res.send('Hello World!');
+  res.send('Hello Wooooorld!');
 });
 
 app.listen(PORT, async () => {
