@@ -18,6 +18,8 @@ const PORT = process.env.PORT || 4000
 app.use(cors({
   origin: ['http://localhost:8084', 'http://192.168.75.133', 'http://stylisimo.ddns.net'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['X-Requested-With', 'Content-Type', 'Authorization', 'Accept'],
+  credentials: true
 }));
 app.use(express.json())
 
