@@ -15,9 +15,9 @@ const app = express();
 const PORT = process.env.PORT || 4000
 
 
-app.use(cors());
 app.use(cors({
-  origin: ['*']
+  origin: ['http://localhost:8084/*','http://192.168.75.133/*','http://stylisimo.ddns.net/*'],
+   methods: ['GET', 'POST', 'PUT', 'DELETE'],
 }));
 app.use(express.json())
 
@@ -34,14 +34,19 @@ app.use('/files', express.static(path.join(__dirname, '../files')));
 
 
 
-app.use(function (req, res, next) {
-  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
-  res.setHeader('Access-Control-Allow-Methods', 'POST');
-  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+app.all('*', function (req, res, next) {
+  
+  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type,Authorization ,Accept');
+  res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Credentials', true);
-  next();
-});
+  res.setHeader('Access-Control-Expose-Headers', 'Authorization');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type, Authorization');
 
+  next();
+
+
+});
 
 
 async function syncDatabase() {
