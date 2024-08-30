@@ -16,7 +16,7 @@ const PORT = process.env.PORT || 4000
 
 
 app.use(cors({
-  origin: ['http://localhost:8084/*','http://192.168.75.133/*']
+  origin: ['http://localhost:8084/*','http://192.168.75.133/*','http://stylisimo.ddns.net/*']
 }));
 app.use(express.json())
 
