@@ -34,10 +34,10 @@ app.use('/files', express.static(path.join(__dirname, '../files')));
 
 
 
-app.all('*', function (req, res, next) {
-  
-  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type,Authorization ,Accept');
-  res.setHeader('Access-Control-Allow-Origin', '*');
+app.use(function (req, res, next) {
+  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
+  res.setHeader('Access-Control-Allow-Methods', 'POST');
+  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
   res.setHeader('Access-Control-Allow-Credentials', true);
   res.setHeader('Access-Control-Expose-Headers', 'Authorization');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
@@ -49,9 +49,10 @@ app.all('*', function (req, res, next) {
 });
 
 
+
 async function syncDatabase() {
   try {
-      await sequelize.sync({ force: false }); // Set to `true` if you want to drop and recreate the table
+      await sequelize.sync({ force: true }); // Set to `true` if you want to drop and recreate the table
       console.log('Database synchronized successfully.');
   } catch (error) {
       console.error('Error synchronizing the database:', error);
