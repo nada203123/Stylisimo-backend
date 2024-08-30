@@ -52,7 +52,7 @@ app.all('*', function (req, res, next) {
 
 async function syncDatabase() {
   try {
-    await sequelize.sync({ force: true }); // Set to `true` if you want to drop and recreate the table
+    await sequelize.sync({ force: false }); // Set to `true` if you want to drop and recreate the table
     console.log('Database synchronized successfully.');
   } catch (error) {
     console.error('Error synchronizing the database:', error);
