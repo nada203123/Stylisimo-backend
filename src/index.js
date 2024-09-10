@@ -21,7 +21,7 @@ app.use(cors({
 }));
 app.use(express.json())
 
-app.use('/api/api/', categoryRoutes)
+app.use('/api/api', categoryRoutes)
 app.use('/api/subCategories', subCategoryRoutes)
 app.use('/api/product', productRoutes)
 app.use('/api/user', userRoutes);
